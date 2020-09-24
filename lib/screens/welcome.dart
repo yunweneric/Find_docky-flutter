@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+// import 'find.dart';
+
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
@@ -26,26 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  // crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Icon(
-                      Icons.sort,
-                      size: 40.0,
-                      color: Colors.blue,
-                    ),
-                    Icon(
-                      Icons.account_circle,
-                      color: Colors.blue,
-                      size: 30.0,
-                    ),
-                    // Text("LOGO"),
-                  ],
-                ),
-              ),
+             
               // Image: Image.asset("images/find.png"),
               Expanded(
                 flex: 5,
@@ -59,22 +41,27 @@ class _MyHomePageState extends State<MyHomePage> {
                     fontSize: 30.0,
                     fontFamily: "Satisfy",
                     fontWeight: FontWeight.w500,
-                    color: Colors.black,
+                    color: Colors.blue.shade900,
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 40.0,
               ),
               Expanded(
                 flex: 2,
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 60.0,
+                  ),
                   child: Text(
-                    "Hundred of lost documents found everyday!. You've found one But how do youreturn them to owner.",
+                    "Hundred of lost documents found everyday!. You've stumbled across a missing ID, Passport, Licences; but do not know how to return it to its's righful owner?.",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 16.0,
+                      fontSize: 18.0,
                       fontFamily: "Lato",
                       fontWeight: FontWeight.w500,
-                      color: Colors.grey,
+                      color: Colors.black38,
                     ),
                   ),
                 ),
@@ -87,21 +74,33 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Container(
-                  margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
-                  child: ButtonTheme(
-                      minWidth: 300,
-                      height: 50.0,
-                      child: RaisedButton(
-                        color: Colors.blue,
-                        child: Text(
-                          "Get Started!",
-                          style: TextStyle(color: Colors.white, fontSize: 16.0),
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        onPressed: () {},
-                      ))),
+                margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                child: ButtonTheme(
+                  minWidth: 300,
+                  height: 50.0,
+                  child: RaisedButton(
+                    color: Colors.blue,
+                    child: Text(
+                      "Get Started!",
+                      style: TextStyle(color: Colors.white, fontSize: 16.0),
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    onPressed: () {
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) {
+                      //       return FindState();
+                      //     },
+                      //   ),
+                      // );
+                      Navigator.pushNamed(context, "/second");
+                    },
+                  ),
+                ),
+              ),
             ],
           ),
         ),
